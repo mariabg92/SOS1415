@@ -15,25 +15,34 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>Augusto</servlet-name>
+		<servlet-name>Manu</servlet-name>
 		<servlet-class>es.us.sos.AugustoServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>Augusto</servlet-name>
+		<servlet-name>Manu</servlet-name>
 		<url-pattern>/saludo/manu</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>Augusto1</servlet-name>
+		<servlet-name>Mariajose</servlet-name>
 		<servlet-class>es.us.sos.AugustoServlet1</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>Augusto1</servlet-name>
+		<servlet-name>Mariajose</servlet-name>
 		<url-pattern>/saludo/mariajose</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>Augusto</servlet-name>
+		<servlet-class>es.us.sos.AugustoServlet2</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Augusto</servlet-name>
+		<url-pattern>/saludo/augusto</url-pattern>
+	</servlet-mapping>
 	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
