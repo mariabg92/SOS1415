@@ -9,6 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 public class Holamundo_1415_grupo_04Servlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		resp.setContentType("text/plain");
-		resp.getWriter().println("Hello, suh niña buehna");
+		resp.getWriter().println("Buenas noches");
 	}
 }
