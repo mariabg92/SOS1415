@@ -5,12 +5,35 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
-		<servlet-name>Trabajo_sos</servlet-name>
-		<servlet-class>es.us.sos.Tipos_energiaServlet</servlet-class>
+		<servlet-name>Emisiones</servlet-name>
+		<servlet-class>es.us.sos.EmisionesServlet</servlet-class>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>ConsumoEnergia</servlet-name>
+		<servlet-class>es.us.sos.ConsumoEnergiaServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>TiposEnergia</servlet-name>
+		<servlet-class>es.us.sos.TiposEnergiaServlet</servlet-class>
+	</servlet>
+	
+	
+	
 	<servlet-mapping>
-		<servlet-name>Trabajo_sos</servlet-name>
-		<url-pattern>/renovables/*</url-pattern>
+		<servlet-name>Emisiones</servlet-name>
+		<url-pattern>/emisiones/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ConsumoEnergia</servlet-name>
+		<url-pattern>/consumos/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>TiposEnergia</servlet-name>
+		<url-pattern>/tiposenergia/*</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>

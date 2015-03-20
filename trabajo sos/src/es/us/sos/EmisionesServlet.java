@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
-public class Tipos_energiaServlet extends HttpServlet {
+public class EmisionesServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
@@ -34,11 +34,13 @@ public class Tipos_energiaServlet extends HttpServlet {
 	public void process(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		
 		PrintWriter out = resp.getWriter();
-		
-		String method = req.getMethod();		
-		
-		out.println("Hola! por "+method);
-			
+		String resource = req.getPathInfo(); 
+		String method = req.getMethod();
+		if(method == "PUT"){
+			out.println("No es posible realizar el comando PUT");
+		}else{
+			out.println("Has introducido el dato: "+ resource + " via "+method);
+		}
 		out.close();
 		
 	}
