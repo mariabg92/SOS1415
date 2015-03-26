@@ -168,14 +168,14 @@ public class EmisionesServlet extends HttpServlet {
 		Gson gson = new Gson(); 
 		StringBuilder sb = new StringBuilder(); 
 		BufferedReader br = req.getReader(); 
-		System.out.println("Tu mierda de bufferedreader dice que " + br.toString()); 
-		System.out.println("y tu asqueroso httpservletrequest dice que " + req.getReader());
+		System.out.println("El bufferedreader dice que " + br.toString()); 
+		System.out.println("El httpservletrequest dice que " + req.getReader());
 	
 		String jsonString; 
 		
 		while((jsonString = br.readLine()) != null){
 			sb.append(jsonString);
-			System.out.println("El JsonString funciona juas"); 
+			
 		}
 		
 		System.out.println("el StringBuilder ahora es "+ sb);
