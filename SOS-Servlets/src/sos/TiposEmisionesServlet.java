@@ -64,6 +64,7 @@ public class TiposEmisionesServlet extends HttpServlet {
 
 	}
 	
+	@SuppressWarnings("static-access")
 	private void processResourceList(String method, HttpServletRequest req, HttpServletResponse resp) 
 			throws IOException{
 		
@@ -79,6 +80,7 @@ public class TiposEmisionesServlet extends HttpServlet {
 		}
 	}
 	
+	@SuppressWarnings("static-access")
 	private void processResource(String method, String resource, HttpServletRequest req, 
 			HttpServletResponse resp) throws IOException{
 		
@@ -100,6 +102,7 @@ public class TiposEmisionesServlet extends HttpServlet {
 		}
 	}
 	
+	@SuppressWarnings("static-access")
 	private void postEmissions(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		
 		Emissions e = extractEmissions(req);
@@ -144,6 +147,7 @@ public class TiposEmisionesServlet extends HttpServlet {
 		return e;
 	}
 	
+	@SuppressWarnings("static-access")
 	private void updateEmissions(HttpServletRequest req, HttpServletResponse resp, String resource) 
 			throws IOException{
 		
