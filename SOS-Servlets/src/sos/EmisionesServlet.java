@@ -48,8 +48,8 @@ public class EmisionesServlet extends HttpServlet {
 		String path = req.getPathInfo(); 
 		String method = req.getMethod(); 
 		
-		Emission yeahmision = new Emission("Spain", 9999.99, 9999, 2033);
-		persistance.put(yeahmision.country, yeahmision); 
+	//	Emission yeahmision = new Emission("Spain", 9999.99, 9999, 2033);
+	//	persistance.put(yeahmision.country, yeahmision); 
 		
 		if(path != null){
 			
@@ -65,6 +65,7 @@ public class EmisionesServlet extends HttpServlet {
 		else{
 			processResourceList(req, resp, method);
 		}
+		out.close(); 
 	}
 	@SuppressWarnings("static-access")
 
@@ -75,7 +76,7 @@ public class EmisionesServlet extends HttpServlet {
 		
 		case "GET": getEmissions(req, resp); break;
 		
-		case "PUT": resp.setStatus(resp.SC_BAD_REQUEST); 
+		case "PUT": resp.sendError(resp.SC_METHOD_NOT_ALLOWED, "METHOD_NOT_ALLOWED"); break; 
 		
 		case "POST": postEmissions(req, resp);break; 
 		
@@ -89,10 +90,10 @@ public class EmisionesServlet extends HttpServlet {
 			throws IOException{
 		//devolver todo el mapa
 		Gson gson = new Gson(); 
-		resp.getWriter().println(gson.toString());
+		
 		String emisionesJson = gson.toJson(persistance.values()); 
 		resp.getWriter().println(emisionesJson);
-		resp.getWriter().println(persistance.toString()); 
+		 
 		
 	}
 	
@@ -114,12 +115,12 @@ public class EmisionesServlet extends HttpServlet {
 	}
 	
 	
+	@SuppressWarnings("static-access")
 	public void processResource(HttpServletRequest req, HttpServletResponse resp, String method, String resource) 
 			throws IOException{
 			
 			if(!persistance.containsKey(resource)) {
-				resp.sendError(404); 
-				return; 
+				resp.setStatus(resp.SC_NOT_FOUND); return;
 				
 			}
 			Emission em = new Emission("Spain", 9999.99, 10, 2033); 
@@ -131,7 +132,9 @@ public class EmisionesServlet extends HttpServlet {
 			
 			case "PUT": updateEmission(req, resp, resource); break; 
 			
-			case "POST": resp.sendError(405); break;
+			case "POST": resp.sendError(resp.SC_METHOD_NOT_ALLOWED, "METHOD_NOT_ALLOWED"); break;
+			
+			
 			
 			case "DELETE": persistance.remove(resource); break;//se elimina únicamente el resource del mapa
 			
@@ -142,7 +145,7 @@ public class EmisionesServlet extends HttpServlet {
 	private void getEmission(HttpServletRequest req, HttpServletResponse resp,
 			String resource) throws IOException{
 		Gson gson = new Gson(); 
-		String gsonString = gson.toJson(resource); 
+		String gsonString = gson.toJson(persistance.get(resource)); 
 		resp.getWriter().println(gsonString);
 		
 	}
