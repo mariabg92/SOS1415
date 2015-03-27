@@ -23,17 +23,17 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet-mapping>
 		<servlet-name>Emisiones</servlet-name>
-		<url-pattern>/EmisionesServlet/emisiones/*</url-pattern>
+		<url-pattern>/emisiones/*</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>ConsumoEnergia</servlet-name>
-		<url-pattern>/ConsumoEnergiaServlet/consumos/*</url-pattern>
+		<url-pattern>/consumos/*</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>TiposEnergia</servlet-name>
-		<url-pattern>/TiposEnergiaServlet/tiposenergia/*</url-pattern>
+		<url-pattern>/tiposenergia/*</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>
