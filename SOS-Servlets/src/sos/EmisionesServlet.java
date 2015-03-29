@@ -107,7 +107,7 @@ public class EmisionesServlet extends HttpServlet {
 			resp.setStatus(resp.SC_CONFLICT);
 		}else if (emiss == null){
 			resp.setStatus(resp.SC_BAD_REQUEST); 
-			resp.getWriter().println("eres un mojon");
+			resp.getWriter().println("error");
 		}else{
 			persistance.put(emiss.country, emiss); 
 		}
